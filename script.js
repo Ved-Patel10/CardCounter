@@ -42,3 +42,16 @@ function updateTrueCount() {
     deckInput.value = deckTotal;
   }
 }
+
+const input = document.querySelector('#deck');
+const buttons = document.querySelectorAll('.button');
+
+input.addEventListener('input', function () {
+  if (input.value) {
+    buttons.forEach(button => button.removeAttribute('disabled'));
+  } else {
+    buttons.forEach(button => button.setAttribute('disabled', true));
+  }
+});
+
+buttons.forEach(button => button.setAttribute('disabled', true));

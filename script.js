@@ -1,5 +1,6 @@
 const addButton = document.getElementById("add");
 const subtractButton = document.getElementById("subtract");
+const noneButton = document.getElementById("none");
 const totalSpan = document.getElementById("total");
 const trueCountSpan = document.getElementById("true-count");
 const deckInput = document.getElementById("deck");
@@ -16,11 +17,19 @@ subtractButton.addEventListener("click", function() {
   updateTrueCount();
 });
 
+noneButton.addEventListener("click", function() {
+    totalSpan.textContent = parseInt(totalSpan.textContent) + 0;
+    updateTrueCount();
+  });
+
 document.addEventListener("keydown", function(event) {
   if (event.code === "KeyA") {
     addButton.click();
   } else if (event.code === "KeyS") {
     subtractButton.click();
+  }
+  else if (event.code === "KeyD") {
+    noneButton.click();
   }
 });
 
